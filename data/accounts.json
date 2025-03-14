@@ -1,17 +1,1 @@
-[
-    {
-        "id": 0,
-        "email": "default@gmail.com",
-        "password": "default",
-        "todoList": [
-            {
-                "taskName": "Default",
-                "completed": true,
-                "img": {
-                    "src": "/upload/anime_girl.jpg",
-                    "alt": "file"
-                }
-            }
-        ]
-    }
-]
+[{"id":0,"email":"default@gmail.com","password":"default","todoList":[{"taskName":"Default","completed":true,"img":{"src":"/upload/anime_girl.jpg","alt":"file"}}]}]

@@ -10,7 +10,7 @@ exports.upload = multer({
     storage:multer.diskStorage({
         destination:function(req, file, cb)
         {
-            cb(null, "C:\\Users\\santl\\Desktop\\CodeQuotient\\BackEnd\\session_cookie\\public\\upload");
+            cb(null, path.join(__dirname, "..", "public", "upload"));
         },
         filename:function(req, file, cb)
         {

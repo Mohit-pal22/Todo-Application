@@ -2,7 +2,11 @@ const express = require("express");
 const session = require('express-session');
 const bodyParser = require ('body-parser');
 
+require("dotenv").config();
+
 const path = require("path");
+
+const PORT = process.env.PORT || 5000;
 
 const loginRouter = require("./routes/loginRouter.js");
 const signupRouter = require("./routes/signupRouter.js");
@@ -49,5 +53,5 @@ app.use("/upload", uploadRouter);
 app.use((req, res) =>
     res.redirect("/login"));
 
-app.listen(3000, () =>
-console.log("Server is listening on 3000"));
+app.listen(PORT, () =>
+console.log("Server is listening on ", PORT ));
