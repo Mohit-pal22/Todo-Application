@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <head>
+        <button class="logout"><a href="/logout">Logout</a></button>
+    </head>
+    
+    <div class="container">
+        <form action="" method="" id="form">
+            <label class="task-label" for="taskName">Task</label>
+            <input type="text" name="taskName" id="task-name" placeholder="Task Name">
+            <input type="file" name="file" id="add-file">
+            <button id="submit-btn" type="submit" class="add-task-btn">Add Task</button>
+        </form>
+        <h2>TASKS</h2>
+        <div class="task-list">
+            <% if(tasks.length >0) {%>    
+                <% for(const [idx, task] of Object.entries(tasks)) { %>
+                <div class="task">
+                    <span class="hidden"><%=idx%></span>
+                    <%if(task.completed){%>
+                        <h3 class="task-done"><%= task.taskName%></h3>
+                        <input type="checkbox" name="complete" class="complete-btn" checked>
+                        <img src="<%=task.img.src%>" alt= "<%=task.img.alt%>" height="40px">
+                        <button class="delete-btn">Delete</button>
+                    <%}else{%>
+                        <h3><%= task.taskName%></h3>
+                        <input type="checkbox" name="complete" class="complete-btn">
+                        <img src="<%=task.img.src%>" alt= "<%=task.img.alt%>" height="40px">
+                        <button class="delete-btn hidden">Delete</button>
+                    <%}%>
+                </div>
+                <% } %>
+            <% }%>
+        </div>
+
+    </div>
+    <script src="/js/todo.js"></script>
+</body>
+</html>

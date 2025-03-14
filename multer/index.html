@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="text">
+        <input id="fileUpload" type="file" name="file">
+        <button id="submit-btn" type="submit">Submit</button>
+    </form>
+
+    <script>
+        // const form = document.querySelector("form");
+        const submitBtn = document.querySelector("#submit-btn");
+        const file = document.querySelector("#fileUpload");
+        console.log(form, submitBtn, file);
+
+        submitBtn.addEventListener("click", function(e)
+        {
+            let form = document.querySelector("form");
+
+            e.preventDefault();
+            console.log(file)
+            console.log(file.files[0]);
+            const formdata = new FormData(form);
+            // formdata.append("file", file.files[0]);
+            console.log(formdata); 
+            
+            fetch('/upload', {
+            method: 'POST',
+            body: formdata
+            })
+            .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('File upload failed');
+            }
+            })
+            .then(data => {
+            console.log('Server response:', data);
+            })
+            .catch(error => {
+            console.error('Error uploading file:', error);
+            });
+        })
+
+    </script>
+</body>
+</html>

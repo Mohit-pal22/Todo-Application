@@ -1,0 +1,49 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>ToDo List</title>
+</head>
+<body>
+    
+        <button class="logout"><a href="/logout">Logout</a></button>
+    
+    
+    <div class="container">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label class="task-label" for="taskName">Task</label>
+            <input type="text" name="taskName" id="task-name" placeholder="Task Name">
+            <input type="file" name="file" id="add-file">
+            <button type="submit" class="add-task-btn">Add Task</button>
+        </form>
+        
+        <h2>TASKS</h2>
+        
+        <div class="task-list">
+            <div class="task">
+                <h3>Add Tasks</h3>
+                <img src="../images/anime girl.jpg" alt="default" height="40px">
+                <button class="delete-btn">Delete</button>
+                <input type="checkbox" name="taskComplete" id="complete-btn">
+            </div>
+            <div class="task">
+                <h3>Add Tasks</h3>
+                <img src="../images/anime girl.jpg" alt="" height="40px">
+                <button class="delete-btn">Delete</button>
+                <input type="checkbox" name="taskComplete" id="complete-btn">
+            </div>
+            <div class="task">
+                <h3>Add Tasks</h3>
+                <img src="../images/anime girl.jpg" alt="" height="40px">
+                <button class="delete-btn">Delete</button>
+                <input type="checkbox" name="taskComplete" id="complete-btn">
+            </div>
+        </div>
+        
+
+    
+    </div>
+
+    <script src="../public/js/index.js"></script>
+
+</body></html>

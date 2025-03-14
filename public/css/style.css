@@ -1,0 +1,120 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {background-color: #dac6bb;}
+
+.logout
+{
+    border: none;
+    outline: 2px solid #fff;
+    outline-offset: -3px;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ff6c0b;
+    a
+    {
+        text-decoration: none;
+        color: white;
+        background-color: inherit;
+        font-weight: 900;
+    }
+}
+.logout:hover
+{
+    opacity: 0.8;
+}
+
+
+.container
+{
+    margin-top: 10px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+
+    h2
+    {
+        margin-top: 2rem;
+    }
+
+    .task-label
+    {
+        font-weight: 900;
+        margin-right: 5px;
+    }
+    #task-name
+    {
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 6px;
+    }
+
+    .add-task-btn
+    {
+        border: none;
+        margin-left: 15px;
+        font-weight: 700;
+        text-align: center;
+        background-color: #0072f5;
+        border-radius: 8px;
+        color: #fff;
+        padding: 6px;
+    }
+    .task
+    {
+        padding: 4px;
+        min-width: 400px;
+        width: 600px;
+        border: 2px solid black;
+        border-radius: 7px;
+        text-align: center;
+        margin: 15px 0;
+        img
+        {
+            display: block;
+            margin: 10px auto;
+        }
+
+        #complete-btn
+        {
+            background-color: #0072f5;
+            border-radius: 5px;
+        }
+
+        .delete-btn
+        {
+            border: none;
+            padding: 6px;
+            border-radius: inherit;
+            color: #fff;
+            background-color: #000;
+        }
+    }
+    
+    .complete-btn{
+        position: relative;
+        float: right;
+        bottom: 15px;
+        scale: 1.5;
+        right: 8px;
+    }
+}
+
+
+.hidden
+{
+    display: none;
+}
+
+.task-done{
+    text-decoration: line-through;
+}
